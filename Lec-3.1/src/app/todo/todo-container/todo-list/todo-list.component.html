@@ -1,0 +1,9 @@
+<div *ngIf="toDoItems && toDoItems.length > 0">
+  <ul class="list-group mt-5">
+    <app-todo-list-item (onDeleteItem)="onDeleteItemHandler($event)"  *ngFor="let item of toDoItems" [toDoItem]="item" ></app-todo-list-item>
+  </ul>
+</div>
+<div *ngIf="!toDoItems || toDoItems.length <= 0">
+  <h1>No Record(s) Found!</h1>
+</div>
+<!-- <app-todo-list-item (onDeleteItem)="onDeleteItemHandler($event)"></app-todo-list-item> -->
